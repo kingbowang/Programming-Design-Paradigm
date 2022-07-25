@@ -1,0 +1,162 @@
+C:\Users\Pengb\.jdks\corretto-11.0.12\bin\java.exe "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.2.1\lib\idea_rt.jar=63630:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.2.1\bin" -Dfile.encoding=UTF-8 -classpath "D:\IDEA Java\CS5010\Project\Project3\out\production\Project3" Driver 6 8 true 8 0.2
+Row: 6
+Column: 8
+Interconnectivity: 8
+TreasureRandom: 0.2
+Wrapping: true
+Begin Game
+Connect:
+1 <==> 2
+1 <==> 9
+2 <==> 1
+2 <==> 3
+2 <==> 10
+3 <==> 2
+3 <==> 4
+4 <==> 3
+4 <==> 5
+4 <==> 12
+5 <==> 4
+5 <==> 6
+5 <==> 13
+6 <==> 5
+6 <==> 7
+6 <==> 14
+7 <==> 6
+7 <==> 8
+7 <==> 15
+8 <==> 7
+8 <==> 16
+9 <==> 1
+9 <==> 10
+9 <==> 17
+10 <==> 2
+10 <==> 9
+11 <==> 19
+12 <==> 4
+13 <==> 5
+13 <==> 14
+13 <==> 21
+14 <==> 6
+14 <==> 13
+15 <==> 7
+15 <==> 16
+16 <==> 8
+16 <==> 15
+16 <==> 24
+17 <==> 9
+17 <==> 18
+17 <==> 25
+18 <==> 17
+18 <==> 26
+19 <==> 11
+19 <==> 27
+20 <==> 21
+20 <==> 28
+21 <==> 13
+21 <==> 20
+21 <==> 29
+22 <==> 23
+22 <==> 30
+23 <==> 22
+23 <==> 24
+23 <==> 31
+24 <==> 16
+24 <==> 23
+24 <==> 32
+25 <==> 17
+26 <==> 18
+26 <==> 34
+27 <==> 19
+27 <==> 35
+28 <==> 20
+28 <==> 36
+29 <==> 21
+30 <==> 22
+30 <==> 38
+31 <==> 23
+31 <==> 32
+32 <==> 24
+32 <==> 31
+32 <==> 40
+33 <==> 34
+34 <==> 26
+34 <==> 33
+34 <==> 35
+34 <==> 42
+35 <==> 27
+35 <==> 34
+35 <==> 36
+35 <==> 43
+36 <==> 28
+36 <==> 35
+36 <==> 44
+37 <==> 38
+37 <==> 45
+38 <==> 30
+38 <==> 37
+38 <==> 46
+39 <==> 40
+39 <==> 47
+40 <==> 32
+40 <==> 39
+40 <==> 48
+41 <==> 42
+42 <==> 34
+42 <==> 41
+43 <==> 35
+44 <==> 36
+44 <==> 45
+45 <==> 37
+45 <==> 44
+46 <==> 38
+46 <==> 47
+47 <==> 39
+47 <==> 46
+47 <==> 48
+48 <==> 40
+48 <==> 47
+The initial position: (2, 3)
+End position: (4, 6)
+You can move: south | You can take: | And now you have: | Now your position = (2, 3).
+Please choice, 0: north | 1: south | 2: west | 3: east | 4: pick up treasure
+1
+You can move: north south | You can take: Ruby | And now you have: | Now your position = (3, 3).
+Please choice, 0: north | 1: south | 2: west | 3: east | 4: pick up treasure
+1
+You can move: north south | You can take: | And now you have: | Now your position = (4, 3).
+Please choice, 0: north | 1: south | 2: west | 3: east | 4: pick up treasure
+1
+You can move: north south west east | You can take: | And now you have: | Now your position = (5, 3).
+Please choice, 0: north | 1: south | 2: west | 3: east | 4: pick up treasure
+2
+You can move: north south west east | You can take: Diamond | And now you have: | Now your position = (5, 2).
+Please choice, 0: north | 1: south | 2: west | 3: east | 4: pick up treasure
+4
+You can move: north south west east | You can take: | And now you have: Diamond | Now your position = (5, 2).
+Please choice, 0: north | 1: south | 2: west | 3: east | 4: pick up treasure
+2
+You can move: west east | You can take: Ruby | And now you have: Diamond | Now your position = (5, 1).
+Please choice, 0: north | 1: south | 2: west | 3: east | 4: pick up treasure
+4
+You can move: west east | You can take: | And now you have: Diamond Ruby | Now your position = (5, 1).
+Please choice, 0: north | 1: south | 2: west | 3: east | 4: pick up treasure
+2
+You can move: north south west east | You can take: | And now you have: Diamond Ruby | Now your position = (5, 8).
+Please choice, 0: north | 1: south | 2: west | 3: east | 4: pick up treasure
+0
+You can move: north south west east | You can take: | And now you have: Diamond Ruby | Now your position = (4, 8).
+Please choice, 0: north | 1: south | 2: west | 3: east | 4: pick up treasure
+2
+You can move: north east | You can take: | And now you have: Diamond Ruby | Now your position = (4, 7).
+Please choice, 0: north | 1: south | 2: west | 3: east | 4: pick up treasure
+0
+You can move: south west east | You can take: | And now you have: Diamond Ruby | Now your position = (3, 7).
+Please choice, 0: north | 1: south | 2: west | 3: east | 4: pick up treasure
+2
+You can move: south east | You can take: | And now you have: Diamond Ruby | Now your position = (3, 6).
+Please choice, 0: north | 1: south | 2: west | 3: east | 4: pick up treasure
+1
+The player reaches the end, the game is over!
+
+Process finished with exit code 0

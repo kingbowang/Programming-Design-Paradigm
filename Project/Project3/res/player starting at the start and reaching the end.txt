@@ -1,0 +1,75 @@
+D:\IDEA Java\CS5010\Project\Project3\out\artifacts\Project3_jar>java -jar Project3.jar 4 4 true 8 0.2
+Row: 4
+Column: 4
+Interconnectivity: 8
+TreasureRandom: 0.2
+Wrapping: true
+Begin Game
+Connect:
+1 <==> 2
+1 <==> 5
+2 <==> 1
+2 <==> 6
+3 <==> 4
+3 <==> 7
+4 <==> 3
+4 <==> 8
+5 <==> 1
+5 <==> 6
+5 <==> 9
+6 <==> 2
+6 <==> 5
+6 <==> 7
+6 <==> 10
+7 <==> 3
+7 <==> 6
+7 <==> 8
+7 <==> 11
+8 <==> 4
+8 <==> 7
+8 <==> 12
+9 <==> 5
+9 <==> 10
+9 <==> 13
+10 <==> 6
+10 <==> 9
+10 <==> 11
+10 <==> 14
+11 <==> 7
+11 <==> 10
+11 <==> 12
+11 <==> 15
+12 <==> 8
+12 <==> 11
+12 <==> 16
+13 <==> 9
+13 <==> 14
+14 <==> 10
+14 <==> 13
+14 <==> 15
+15 <==> 11
+15 <==> 14
+15 <==> 16
+16 <==> 12
+16 <==> 15
+The initial position: (4, 3)
+End position: (1, 1)
+You can move: north south west east | You can take: | And now you have: | Now your position = (4, 3).
+Please choice, 0: north | 1: south | 2: west | 3: east | 4: pick up treasure
+1
+You can move: north south east | You can take: | And now you have: | Now your position = (1, 3).
+Please choice, 0: north | 1: south | 2: west | 3: east | 4: pick up treasure
+1
+You can move: north south west east | You can take: Ruby | And now you have: | Now your position = (2, 3).
+Please choice, 0: north | 1: south | 2: west | 3: east | 4: pick up treasure
+4
+You can move: north south west east | You can take: | And now you have: Ruby | Now your position = (2, 3).
+Please choice, 0: north | 1: south | 2: west | 3: east | 4: pick up treasure
+2
+You can move: north south west east | You can take: | And now you have: Ruby | Now your position = (2, 2).
+Please choice, 0: north | 1: south | 2: west | 3: east | 4: pick up treasure
+2
+You can move: north south west east | You can take: | And now you have: Ruby | Now your position = (2, 1).
+Please choice, 0: north | 1: south | 2: west | 3: east | 4: pick up treasure
+0
+The player reaches the end, the game is over!

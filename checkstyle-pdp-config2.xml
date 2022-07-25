@@ -1,0 +1,262 @@
+<?xml version="1.0"?>
+<!DOCTYPE module PUBLIC
+          "-//Puppy Crawl//DTD Check Configuration 1.3//EN"
+          "http://www.puppycrawl.com/dtds/configuration_1_3.dtd">
+
+<!--
+
+    Checkstyle configuration that checks the Google coding conventions from:
+
+    -  Google Java Style
+       https://google-styleguide.googlecode.com/svn-history/r130/trunk/javaguide.html
+
+    Checkstyle is very configurable. Be sure to read the documentation at
+    http://checkstyle.sf.net (or in your downloaded distribution).
+
+    Most Checks are configurable, be sure to consult the documentation.
+
+    To completely disable a check, just comment it out or delete it from the file.
+
+    Authors: Max Vetrenko, Ruslan Diachenko, Roman Ivanov.
+
+ -->
+
+<module name = "Checker">
+    <property name="charset" value="UTF-8"/>
+
+    <property name="severity" value="warning"/>
+
+    <property name="fileExtensions" value="java, properties, xml"/>
+    <!-- Checks for whitespace                               -->
+    <!-- See http://checkstyle.sf.net/config_whitespace.html -->
+        <module name="FileTabCharacter">
+            <property name="eachLine" value="true"/>
+        </module>
+
+    <module name="LineLength">
+        <property name="max" value="100"/>
+        <property name="ignorePattern" value="^package.*|^import.*|a href|href|http://|https://|ftp://"/>
+    </module>
+    <module name="TreeWalker">
+        <module name="OuterTypeFilename"/>
+        <module name="IllegalTokenText">
+            <property name="tokens" value="STRING_LITERAL, CHAR_LITERAL"/>
+            <property name="format" value="\\u00(08|09|0(a|A)|0(c|C)|0(d|D)|22|27|5(C|c))|\\(0(10|11|12|14|15|42|47)|134)"/>
+            <property name="message" value="Avoid using corresponding octal or Unicode escape."/>
+        </module>
+        <module name="AvoidEscapedUnicodeCharacters">
+            <property name="allowEscapesForControlCharacters" value="true"/>
+            <property name="allowByTailComment" value="true"/>
+            <property name="allowNonPrintableEscapes" value="true"/>
+        </module>
+        <module name="AvoidStarImport">
+            <property name="excludes" value="tester,javalib.worldimages,javalib.funworld,javalib.impworld" />
+        </module>
+        <module name="OneTopLevelClass"/>
+        <module name="NoLineWrap"/>
+<!--         <module name="EmptyBlock">
+            <property name="option" value="TEXT"/>
+            <property name="tokens" value="LITERAL_TRY, LITERAL_FINALLY, LITERAL_IF, LITERAL_ELSE, LITERAL_SWITCH"/>
+        </module> -->
+        <!--<module name="NeedBraces"/> This is duplicated by PMD, and PMD has several specific variants-->
+        <module name="LeftCurly">
+        </module>
+        <module name="RightCurly">
+            <property name="option" value="alone_or_singleline"/>
+            <property name="tokens" value="CLASS_DEF, METHOD_DEF, CTOR_DEF, LITERAL_FOR, LITERAL_WHILE, LITERAL_DO, STATIC_INIT, INSTANCE_INIT"/>
+        </module>
+        <module name="WhitespaceAround">
+            <property name="allowEmptyConstructors" value="true"/>
+            <property name="allowEmptyMethods" value="true"/>
+            <property name="allowEmptyTypes" value="true"/>
+            <property name="allowEmptyLoops" value="true"/>
+            <message key="ws.notFollowed"
+             value="`{0}` should be surrounded by whitespace, but there is none after it. Empty blocks may only be represented as '{'} when not part of a multi-block statement (4.1.3)"/>
+             <message key="ws.notPreceded"
+             value="`{0}` should be surrounded by whitespace, but there is none before it."/>
+        </module>
+        <module name="OneStatementPerLine"/>
+        <module name="MultipleVariableDeclarations"/>
+        <module name="ArrayTypeStyle"/>
+        <module name="FallThrough"/>
+        <module name="UpperEll"/>
+        <module name="ModifierOrder"/>
+        <module name="EmptyLineSeparator">
+            <property name="allowNoEmptyLineBetweenFields" value="true"/>
+        </module>
+        <module name="SeparatorWrap">
+            <property name="tokens" value="DOT"/>
+            <property name="option" value="nl"/>
+        </module>
+        <module name="SeparatorWrap">
+            <property name="tokens" value="COMMA"/>
+            <property name="option" value="EOL"/>
+        </module>
+        <module name="PackageName">
+            <property name="format" value="^[a-z][a-z0-9]+(\.[a-z][a-z0-9]*)*$"/>
+            <message key="name.invalidPattern"
+             value="Package name `{0}` must match pattern `{1}`."/>
+        </module>
+<!--         <module name="TypeName">
+            <message key="name.invalidPattern"
+             value="Type name `{0}` must match pattern `{1}`."/>
+        </module> -->
+<!--         <module name="MemberName">
+            <property name="format" value="^[a-z][a-z0-9][a-zA-Z0-9]*$"/>
+            <message key="name.invalidPattern"
+             value="Member name `{0}` must match pattern `{1}`."/>
+        </module> -->
+<!--         <module name="ParameterName">
+            <property name="format" value="^[a-z][a-z0-9][a-zA-Z0-9]*$"/>
+            <message key="name.invalidPattern"
+             value="Parameter name `{0}` must match pattern `{1}`."/>
+        </module> -->
+        <!--<module name="LocalVariableName">
+            <property name="tokens" value="VARIABLE_DEF"/>
+            <property name="format" value="^[a-z][a-z0-9][a-zA-Z0-9]*$"/>
+            <property name="allowOneCharVarInForLoop" value="true"/>
+            <message key="name.invalidPattern"
+             value="Local variable name `{0}` must match pattern `{1}`."/>
+        </module> This check is done more specifically by PMD-->
+        <!--<module name="ClassTypeParameterName">
+            <property name="format" value="(^[A-Z][0-9]?)$|([A-Z][a-zA-Z0-9]*[T]$)"/>
+            <message key="name.invalidPattern"
+             value="Class type name `{0}` must match pattern `{1}`."/>
+        </module>-->
+<!--         <module name="MethodTypeParameterName">
+            <property name="format" value="(^[A-Z][0-9]?)$|([A-Z][a-zA-Z0-9]*[T]$)"/>
+            <message key="name.invalidPattern"
+             value="Method type name `{0}` must match pattern `{1}`."/>
+        </module> -->
+        <module name="NoFinalizer"/>
+        <module name="GenericWhitespace">
+            <message key="ws.followed"
+             value="`{0}` is followed by whitespace, when no whitespace is expected."/>
+             <message key="ws.preceded"
+             value="`{0}` is preceded with whitespace, when no whitespace is expected."/>
+             <message key="ws.illegalFollow"
+             value="`{0}` should be followed by whitespace."/>
+             <message key="ws.notPreceded"
+             value="`{0}` should be preceded with whitespace."/>
+        </module>
+        <module name="Indentation">
+            <property name="basicOffset" value="2"/>
+            <property name="braceAdjustment" value="0"/>
+            <property name="caseIndent" value="2"/>
+            <property name="throwsIndent" value="4"/>
+            <property name="lineWrappingIndentation" value="4"/>
+            <property name="arrayInitIndent" value="2"/>
+            <message key="indentation.error"
+                     value="`{0}` has incorrect indentation level {1}; its expected level should be {2}." />
+            <message key="indentation.child.error"
+                     value="`{0}` child has incorrect indentation level {1}; expected level should be {2}." />
+        </module>
+        <module name="AbbreviationAsWordInName">
+            <property name="ignoreFinal" value="false"/>
+            <property name="allowedAbbreviationLength" value="1"/>
+        </module>
+        <module name="OverloadMethodsDeclarationOrder"/>
+        <module name="VariableDeclarationUsageDistance">
+            <message key="variable.declaration.usage.distance"
+                     value="Variable `{0}` is declared {1} statements before its first usage.  Rewrite the code so there are no more than {2} statements in between." />
+            <message key="variable.declaration.usage.distance.extend"
+                     value="Variable `{0}` is declared {1} statements before its first usage.  Rewrite the code so there are no more than {2} statements in between.  If you truly need the variable that early, consider declaring it `final`, to help ensure it isn''t inadvertently modified by method calls or other side effects." />
+        </module>
+        <module name="CustomImportOrder">
+            <property name="specialImportsRegExp" value="com.google"/>
+            <property name="sortImportsInGroupAlphabetically" value="true"/>
+            <property name="customImportOrderRules" value="STATIC###SPECIAL_IMPORTS###THIRD_PARTY_PACKAGE###STANDARD_JAVA_PACKAGE"/>
+        </module>
+        <module name="MethodParamPad"/>
+        <module name="OperatorWrap">
+            <property name="option" value="NL"/>
+            <property name="tokens" value="BAND, BOR, BSR, BXOR, DIV, EQUAL, GE, GT, LAND, LE, LITERAL_INSTANCEOF, LOR, LT, MINUS, MOD, NOT_EQUAL, PLUS, QUESTION, SL, SR, STAR "/>
+        </module>
+        <module name="AnnotationLocation">
+            <property name="tokens" value="CLASS_DEF, INTERFACE_DEF, ENUM_DEF, METHOD_DEF, CTOR_DEF"/>
+        </module>
+        <module name="AnnotationLocation">
+            <property name="tokens" value="VARIABLE_DEF"/>
+            <property name="allowSamelineMultipleAnnotations" value="true"/>
+        </module>
+        <module name="NonEmptyAtclauseDescription">
+            <message key="javadoc.missed.html.close"
+                     value="The Javadoc comment appears to have an unterminated ''{1}'' HTML tag at column {0}.  This might happen because you''ve included Java code (especially a generic type like ''Foo&lt;Bar&gt;'') in your comment without marking it as '{@code ...}', or because you''ve commented out code using /** ... */ instead of /* ... */."/>
+        </module>
+        <module name="JavadocTagContinuationIndentation">
+            <message key="tag.continuation.indent"
+                     value="At-clauses, like @param, @return or @throws, should be formatted with hanging indentation.  Each line should begin as usual with an asterisk-and-space, aligned to the left, but the text of the documentation should be formatted like a hanging-list, and indented by at least {0} additional spaces." />
+            <message key="javadoc.missed.html.close"
+                     value="The Javadoc comment appears to have an unterminated ''{1}'' HTML tag at column {0}.  This might happen because you''ve included Java code (especially a generic type like ''Foo&lt;Bar&gt;'') in your comment without marking it as '{@code ...}', or because you''ve commented out code using /** ... */ instead of /* ... */."/>
+        </module>
+        <module name="SummaryJavadocCheck">
+            <property name="forbiddenSummaryFragments" value="^@return the *|^This method returns |^A [{]@code [a-zA-Z0-9]+[}]( is a )"/>
+            <message key="summary.first.sentence"
+                     value="Javadoc should be written in complete sentences; the first sentence is incomplete -- there is no period marking its end" />
+            <message key="summary.javadoc"
+                     value="Avoid using trite phrases to document your code.  Merely saying `@return the ...` or `This method returns` doesn''t document the return value very informatively.  Likewise, saying `A {@code ...} is a ...` does not likely convey any new information." />
+            <message key="javadoc.missed.html.close"
+                     value="The Javadoc comment appears to have an unterminated ''{1}'' HTML tag at column {0}.  This might happen because you''ve included Java code (especially a generic type like ''Foo&lt;Bar&gt;'') in your comment without marking it as '{@code ...}', or because you''ve commented out code using /** ... */ instead of /* ... */."/>
+        </module>
+        <module name="JavadocParagraph">
+            <message key="javadoc.missed.html.close"
+                     value="The Javadoc comment appears to have an unterminated ''{1}'' HTML tag at column {0}.  This might happen because you''ve included Java code (especially a generic type like ''Foo&lt;Bar&gt;'') in your comment without marking it as '{@code ...}', or because you''ve commented out code using /** ... */ instead of /* ... */."/>
+        </module>
+        <module name="AtclauseOrder">
+            <property name="tagOrder" value="@param, @return, @throws, @deprecated"/>
+            <property name="target" value="CLASS_DEF, INTERFACE_DEF, ENUM_DEF, METHOD_DEF, CTOR_DEF, VARIABLE_DEF"/>
+            <message key="javadoc.missed.html.close"
+                     value="The Javadoc comment appears to have an unterminated ''{1}'' HTML tag at column {0}.  This might happen because you''ve included Java code (especially a generic type like ''Foo&lt;Bar&gt;'') in your comment without marking it as '{@code ...}', or because you''ve commented out code using /** ... */ instead of /* ... */."/>
+        </module>
+        <module name="JavadocMethod">
+<!--            <property name="scope" value="public"/>-->
+            <property name="allowMissingParamTags" value="true"/>
+            <property name="allowMissingReturnTag" value="true"/>
+            <property name="allowedAnnotations" value="Override, Test, Before, After"/>
+            <message key="javadoc.missing"
+                     value="All public methods need a Javadoc comment explaining their purpose."/>
+        </module>
+        <module name="MissingJavadocMethodCheck">
+          <property name="allowMissingPropertyJavadoc" value="true"/>
+          <message key="javadoc.missing"
+                     value="All public methods need a Javadoc comment explaining their purpose."/>
+        </module>
+        <module name="MissingJavadocMethod">
+<!--            <property name="scope" value="public"/>-->
+            <property name="minLineCount" value="2"/>
+            <property name="allowedAnnotations" value="Override, Test, Before, After"/>
+            <property name="allowMissingPropertyJavadoc" value="true"/>
+            <message key="javadoc.missing"
+                     value="All public methods need a Javadoc comment explaining their purpose."/>
+        </module>
+        <module name="JavadocType">
+<!--            <property name="scope" value="public"/>-->
+            <property name="allowMissingParamTags" value="true"/>
+            <property name="allowUnknownTags" value="true"/>
+            <message key="javadoc.unknownTag" value="The tag ''{0}'' is not a known Javadoc tag; please fix any typos or remove it if it's not needed."/>
+            <message key="javadoc.unusedTag" value="The tag {0} for ''{1}'' is not used; please fix any typos or remove it if it's not needed."/>
+        </module>
+        <module name="MissingJavadocType">
+<!--            <property name="scope" value="public"/>-->
+            <message key="javadoc.missing"
+                     value="All public types need a Javadoc comment explaining their purpose."/>
+        </module>
+        <module name="InvalidJavadocPosition">
+            <message key="invalid.position" value="This Javadoc comment is at an invalid position.  Javadoc must only be placed immediately before module, package, class, interface, constructor, method, or field declarations (including any annotations on those declarations).  If this was intended to be a Javadoc comment, move it to the correct place; otherwise, change it into a normal Java comment."/>
+        </module>
+<!--         <module name="MethodName">
+            <property name="format" value="^[a-z][a-z0-9][a-zA-Z0-9_]*$"/>
+            <message key="name.invalidPattern"
+             value="Method name `{0}` must match pattern `{1}`."/>
+        </module> -->
+        <module name="SingleLineJavadoc">
+            <property name="ignoreInlineTags" value="false"/>
+            <message key="javadoc.missed.html.close"
+                     value="The Javadoc comment appears to have an unterminated ''{1}'' HTML tag at column {0}.  This might happen because you''ve included Java code (especially a generic type like ''Foo&lt;Bar&gt;'') in your comment without marking it as '{@code ...}', or because you''ve commented out code using /** ... */ instead of /* ... */."/>
+        </module>
+<!--         <module name="EmptyCatchBlock">
+            <property name="exceptionVariableName" value="expected"/>
+        </module> -->
+        <module name="CommentsIndentation"/>
+    </module>
+</module>

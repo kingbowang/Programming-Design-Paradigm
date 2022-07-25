@@ -1,0 +1,97 @@
+C:\Users\Pengb\.jdks\corretto-11.0.12\bin\java.exe "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.2.1\lib\idea_rt.jar=54864:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.2.1\bin" -Dfile.encoding=UTF-8 -classpath "D:\IDEA Java\CS5010\Project\Project4\out\production\Project4" driver.DungeonDriver
+The initial position: (3,4)
+End position: (0,1)
+
+You are in a cave
+Now you position: (3,4)
+Now you have: Arrow:3 
+Doors lead to the: E W S 
+You smell something terrible nearby
+Move, Pickup, or Shoot (M-P-S)? S
+No. of caves (1-5)? 1
+Where to(N S E W)? S
+You shoot an Arrow into the darkness
+
+You are in a cave
+Now you position: (3,4)
+Now you have: Arrow:2 
+Doors lead to the: E W S 
+You smell something terrible nearby
+Move, Pickup, or Shoot (M-P-S)? S
+No. of caves (1-5)? 1
+Where to(N S E W)? W
+You shoot an Arrow into the darkness
+
+You are in a cave
+Now you position: (3,4)
+Now you have: Arrow:1 
+Doors lead to the: E W S 
+You smell something terrible nearby
+Move, Pickup, or Shoot (M-P-S)? S
+No. of caves (1-5)? 1
+Where to(N S E W)? E
+You hear a great howl in the distance
+You are out of Arrows, explore to find more
+
+You are in a cave
+Now you position: (3,4)
+Now you have: Arrow:0 
+Doors lead to the: E W S 
+You smell something terrible nearby
+Move, Pickup, or Shoot (M-P-S)? M
+Where to? E
+
+You are in a cave
+Now you position: (3,5)
+Now you have: Arrow:0 
+Doors lead to the: N E W S 
+Move, Pickup, or Shoot (M-P-S)? M
+Where to? N
+
+You are in a cave
+Now you position: (2,5)
+Now you have: Arrow:0 
+Doors lead to the: N E W S 
+You smell something terrible nearby
+Move, Pickup, or Shoot (M-P-S)? M
+Where to? N
+
+You are in a cave
+Now you position: (1,5)
+Now you have: Arrow:0 
+Doors lead to the: E S 
+You smell something slight nearby
+Move, Pickup, or Shoot (M-P-S)? M
+Where to? E
+
+You are in a cave
+Now you position: (1,0)
+Now you have: Arrow:0 
+Doors lead to the: W S 
+Move, Pickup, or Shoot (M-P-S)? M
+Where to? S
+
+You are in a cave
+Now you position: (2,0)
+Now you have: Arrow:0 
+Doors lead to the: N W E S 
+Move, Pickup, or Shoot (M-P-S)? M
+Where to? E
+
+You are in a cave
+Now you position: (2,1)
+Now you have: Arrow:0 
+Doors lead to the: N W S 
+Move, Pickup, or Shoot (M-P-S)? M
+Where to? N
+
+You are in a cave
+Now you position: (1,1)
+Now you have: Arrow:0 
+Doors lead to the: N E S 
+Move, Pickup, or Shoot (M-P-S)? M
+Where to? N
+
+Great! You made it through the map!
+
+Process finished with exit code 0

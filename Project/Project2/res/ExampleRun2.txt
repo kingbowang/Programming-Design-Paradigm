@@ -1,0 +1,434 @@
+C:\Users\Pengb\.jdks\corretto-11.0.12\bin\java.exe "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.2.1\lib\idea_rt.jar=59460:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.2.1\bin" -Dfile.encoding=UTF-8 -classpath "D:\IDEA Java\CS5010\Project\Project2\out\production\Project2" battle.Driver
+Battle Game
+
+player1: abdul 
+abdul is currently wearing:
+
+HeadGear: hat of devil
+
+Potion:
+no#1: potion of holy
+no#2: potion of strength
+no#3: water of strength
+no#4: water of justice
+no#5: water of power
+no#6: water of king
+
+Belt:
+no#1: belt of kill
+no#2: belt of fake
+no#3: belt of sight
+no#4: belt of speed
+no#5: belt of flame
+no#6: belt of drunkenness
+no#7: belt of strength
+no#8: belt of doom
+
+FootGear: boots of electricity
+
+Weapon: Axe of Light
+
+With total health: 126
+With a base attack of: 11
+With a base defense of: 14
+With a base charisma of: 15
+With a modified attack of: 36
+With a modified defense of: 35
+With a modified charisma of: 25 
+
+player2: vic 
+vic is currently wearing:
+
+HeadGear: headband of flame
+
+Potion:
+no#1: potion of ruin
+no#2: potion of fake
+no#3: potion of explosion
+no#4: potion of healing
+no#5: potion of punishment
+no#6: water of escape
+no#7: water of devil
+no#8: water of flame
+no#9: water of kill
+no#10: water of telepathy
+no#11: water of healing
+
+Belt:
+no#1: belt of water
+no#2: belt of heft
+no#3: belt of flight
+no#4: belt of magic
+no#5: belt of ice
+
+FootGear: shoes of doom
+
+Weapon: Broadsword of Water
+
+With total health: 127
+With a base attack of: 15
+With a base defense of: 16
+With a base charisma of: 13
+With a modified attack of: 31
+With a modified defense of: 26
+With a modified charisma of: 32 
+
+abdul is ready to attack vic.
+abdul has attacked 5 damage.
+
+vic is ready to attack abdul.
+vic has attacked 7 damage.
+
+abdul is ready to attack vic.
+abdul has attacked 7 damage.
+
+vic is ready to attack abdul.
+vic miss attack because of opposite's avoidance.
+
+abdul is ready to attack vic.
+abdul has attacked 4 damage.
+
+vic is ready to attack abdul.
+vic miss attack because of opposite's avoidance.
+
+abdul is ready to attack vic.
+abdul has attacked 7 damage.
+
+vic is ready to attack abdul.
+vic miss attack because of opposite's avoidance.
+
+abdul is ready to attack vic.
+abdul has attacked 6 damage.
+
+vic is ready to attack abdul.
+vic has attacked 7 damage.
+
+abdul is ready to attack vic.
+abdul has attacked 8 damage.
+
+vic is ready to attack abdul.
+vic miss attack because of opposite's avoidance.
+
+abdul is ready to attack vic.
+abdul has attacked 7 damage.
+
+vic is ready to attack abdul.
+vic has attacked 11 damage.
+
+abdul is ready to attack vic.
+abdul has attacked 4 damage.
+
+vic is ready to attack abdul.
+vic miss attack because of opposite's avoidance.
+
+abdul is ready to attack vic.
+abdul has attacked 6 damage.
+
+vic is ready to attack abdul.
+vic has attacked 9 damage.
+
+abdul is ready to attack vic.
+abdul has attacked 7 damage.
+
+vic is ready to attack abdul.
+vic miss attack because of opposite's avoidance.
+
+abdul is ready to attack vic.
+abdul has attacked 7 damage.
+
+vic is ready to attack abdul.
+vic miss attack because of opposite's avoidance.
+
+abdul is ready to attack vic.
+abdul has attacked 6 damage.
+
+vic is ready to attack abdul.
+vic miss attack because of opposite's avoidance.
+
+abdul is ready to attack vic.
+abdul has attacked 5 damage.
+
+vic is ready to attack abdul.
+vic miss attack because of opposite's avoidance.
+
+abdul is ready to attack vic.
+abdul has attacked 8 damage.
+
+vic is ready to attack abdul.
+vic miss attack because of opposite's avoidance.
+
+abdul is ready to attack vic.
+abdul has attacked 7 damage.
+
+vic is ready to attack abdul.
+vic miss attack because of opposite's avoidance.
+
+abdul is ready to attack vic.
+abdul has attacked 6 damage.
+
+vic is ready to attack abdul.
+vic miss attack because of opposite's avoidance.
+
+abdul is ready to attack vic.
+abdul has attacked 7 damage.
+
+vic is ready to attack abdul.
+vic has attacked 8 damage.
+
+abdul is ready to attack vic.
+abdul has attacked 6 damage.
+
+vic is ready to attack abdul.
+vic miss attack because of opposite's avoidance.
+
+abdul is ready to attack vic.
+abdul has attacked 8 damage.
+
+vic is ready to attack abdul.
+vic has attacked 11 damage.
+
+abdul is ready to attack vic.
+abdul has attacked 6 damage.
+abdul has won the fight.
+Nice Battle, Players now send to relax, do you want to play again?(yes/no):
+yes
+Battle Game
+
+player1: abdul 
+abdul is currently wearing:
+
+HeadGear: helm of flight
+
+Potion:
+no#1: potion of punishment
+no#2: potion of explosion
+no#3: potion of doom
+no#4: potion of punishment
+no#5: potion of telepathy
+no#6: potion of healing
+no#7: potion of strength
+no#8: potion of holy
+no#9: water of justice
+no#10: water of escape
+no#11: water of strength
+no#12: water of king
+
+Belt:
+no#1: belt of burning
+no#2: belt of magic
+no#3: belt of healing
+no#4: belt of flame
+no#5: belt of doom
+
+FootGear: slides of water
+
+Weapon: Flail of Sleep
+
+With total health: 111
+With a base attack of: 11
+With a base defense of: 14
+With a base charisma of: 15
+With a modified attack of: 28
+With a modified defense of: 12
+With a modified charisma of: 29 
+
+player2: vic 
+vic is currently wearing:
+
+HeadGear: hat of devil
+
+Potion:
+no#1: potion of explosion
+no#2: potion of ruin
+no#3: potion of holy
+no#4: water of power
+no#5: water of kill
+no#6: water of healing
+
+Belt:
+no#1: belt of flame
+no#2: belt of explosion
+no#3: belt of water
+no#4: belt of strength
+no#5: belt of sight
+no#6: belt of justice
+
+FootGear: boots of electricity
+
+Weapon: Axe of Light
+
+With total health: 110
+With a base attack of: 15
+With a base defense of: 16
+With a base charisma of: 13
+With a modified attack of: 47
+With a modified defense of: 25
+With a modified charisma of: 21 
+
+abdul is ready to attack vic.
+abdul has attacked 15 damage.
+
+vic is ready to attack abdul.
+vic has attacked 14 damage.
+
+abdul is ready to attack vic.
+abdul miss attack because of opposite's avoidance.
+
+vic is ready to attack abdul.
+vic has attacked 11 damage.
+
+abdul is ready to attack vic.
+abdul has attacked 16 damage.
+
+vic is ready to attack abdul.
+vic has attacked 14 damage.
+
+abdul is ready to attack vic.
+abdul has attacked 15 damage.
+
+vic is ready to attack abdul.
+vic has attacked 14 damage.
+
+abdul is ready to attack vic.
+abdul has attacked 15 damage.
+
+vic is ready to attack abdul.
+vic has attacked 12 damage.
+
+abdul is ready to attack vic.
+abdul miss attack because of opposite's avoidance.
+
+vic is ready to attack abdul.
+vic has attacked 11 damage.
+
+abdul is ready to attack vic.
+abdul has attacked 16 damage.
+
+vic is ready to attack abdul.
+vic has attacked 11 damage.
+
+abdul is ready to attack vic.
+abdul has attacked 16 damage.
+
+vic is ready to attack abdul.
+vic has attacked 14 damage.
+
+abdul is ready to attack vic.
+abdul has attacked 16 damage.
+
+vic is ready to attack abdul.
+vic has attacked 12 damage.
+vic has won the fight.
+Nice Battle, Players now send to relax, do you want to play again?(yes/no):
+yes
+Battle Game
+
+player1: abdul 
+abdul is currently wearing:
+
+HeadGear: headband of flame
+
+Potion:
+no#1: potion of flame
+no#2: potion of punishment
+no#3: potion of punishment
+no#4: potion of doom
+no#5: water of kill
+no#6: water of healing
+no#7: water of justice
+no#8: water of power
+no#9: water of king
+
+Belt:
+no#1: belt of ice
+no#2: belt of explosion
+no#3: belt of flame
+no#4: belt of strength
+no#5: belt of sight
+no#6: belt of justice
+
+FootGear: boots of electricity
+
+Weapon: Broadsword of Water
+
+With total health: 86
+With a base attack of: 11
+With a base defense of: 14
+With a base charisma of: 15
+With a modified attack of: 19
+With a modified defense of: 16
+With a modified charisma of: 27 
+
+player2: vic 
+vic is currently wearing:
+
+HeadGear: balaclava of speed
+
+Potion:
+no#1: potion of holy
+no#2: potion of telepathy
+no#3: potion of ruin
+no#4: potion of punishment
+no#5: potion of fake
+no#6: water of justice
+no#7: water of healing
+no#8: water of power
+no#9: water of strength
+no#10: water of escape
+no#11: water of escape
+no#12: water of kill
+no#13: water of strength
+
+Belt:
+no#1: belt of fake
+no#2: belt of heft
+no#3: belt of flight
+no#4: belt of magic
+no#5: belt of devil
+
+FootGear: boots of electricity
+
+Weapon: Axe of Flame
+
+With total health: 121
+With a base attack of: 15
+With a base defense of: 16
+With a base charisma of: 13
+With a modified attack of: 35
+With a modified defense of: 15
+With a modified charisma of: 28 
+
+abdul is ready to attack vic.
+abdul has attacked zero damage, because attack 27 is not greater than constitution 43.
+
+vic is ready to attack abdul.
+vic has attacked 21 damage.
+
+abdul is ready to attack vic.
+abdul has attacked zero damage, because attack 26 is not greater than constitution 43.
+
+vic is ready to attack abdul.
+vic has attacked 18 damage.
+
+abdul is ready to attack vic.
+abdul has attacked zero damage, because attack 25 is not greater than constitution 43.
+
+vic is ready to attack abdul.
+vic has attacked 18 damage.
+
+abdul is ready to attack vic.
+abdul has attacked zero damage, because attack 25 is not greater than constitution 43.
+
+vic is ready to attack abdul.
+vic has attacked 18 damage.
+
+abdul is ready to attack vic.
+abdul has attacked zero damage, because attack 25 is not greater than constitution 43.
+
+vic is ready to attack abdul.
+vic has attacked 17 damage.
+vic has won the fight.
+Nice Battle, Players now send to relax, do you want to play again?(yes/no):
+no
+
+Process finished with exit code 0

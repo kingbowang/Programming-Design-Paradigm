@@ -1,0 +1,797 @@
+<?xml version="1.0"?>
+<ruleset name="JavaTddPlugin PMD Rules"
+    xmlns="http://pmd.sf.net/ruleset/2.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 http://pmd.sourceforge.net/ruleset_2_0_0.xsd">
+  <description>
+    The JavaTddPlugin PMD Rules ruleset contains the full collection of
+    checks we expect all of our students to follow at Virginia Tech.  It
+    also serves as the default PMD ruleset for Web-CAT users using the
+    JavaTddPlugin for automated grading.  This ruleset contains a subset
+    of the checks in all of the sets predefined in PMD 3.8, together with
+    a couple of custom checks.  Grant Braught at Dickinson College has
+    also contributed a number of customized error messages for various
+    rules.
+  </description>
+
+  <!--
+      The checks in this file are organized according to the named
+      rulesets in the PMD documentation.  Just go to the Rule Sets Index
+      link in the PMD documentation to find the order used here.
+  -->
+
+  <!-- <rule ref="plugin-rulesets/braces.xml"/> -->
+  <rule ref="category/java/errorprone.xml/OverrideBothEqualsAndHashcode"
+        message="If you are going to override either equals(Object) or hashCode(), you must override both of them to ensure consistency between them." />
+  <rule ref="category/java/codestyle.xml/ControlStatementBraces"
+        message="This statement should have braces, so as to be explicit where the end of the block is."/>
+  <!-- clone.xml -->
+  <!-- <rule ref="plugin-rulesets/codesize.xml"/> -->
+  <!-- <rule ref="plugin-rulesets/controversial.xml"/> -->
+  <rule ref="category/java/errorprone.xml/SuspiciousOctalEscape"/>
+  <rule ref="category/java/errorprone.xml/AvoidAccessibilityAlteration"/>
+  <!-- coupling.xml -->
+  <!--<rule ref="plugin-rulesets/design.xml"/>-->
+
+  <rule ref="category/java/errorprone.xml/DetachedTestCase"
+    message="A test class should only have public or package-visible methods if they are intended to be tests, but this method is not annotated as @Test.  Either add the annotation or make the method private or protected."/>
+
+  <rule name="LocalVariableName"
+        language="java"
+        message="Local variables should be named in camelCase where the name starts with a lowercase letter, and the first letter of each subsequent word is capitalized.  Digits are allowed after the first character."
+        class="net.sourceforge.pmd.lang.rule.XPathRule">
+    <properties>
+      <property name="xpath">
+        <value>
+          <![CDATA[
+                   //ClassOrInterfaceDeclaration[not(starts-with(@Image, 'Example'))]//LocalVariableDeclaration//VariableDeclaratorId[not(matches(@Image,"^[a-z][_a-zA-Z0-9]*$"))] |
+                   //ClassOrInterfaceDeclaration[not(starts-with(@Image, 'Example'))]//CatchStatement/FormalParameter//VariableDeclaratorId[not(matches(@Image,"^[a-z][_a-zA-Z0-9]*$"))]
+          ]]>
+        </value>
+      </property>
+    </properties>
+  </rule>
+
+  <rule name="MemberName"
+        language="java"
+        message="Fields should be named in camelCase where the name starts with a lowercase letter, and the first letter of each subsequent word is capitalized.  If this is meant to be a constant on a class or an interface, then it should be entirely capitalized, with words separated by underscores, and the field should be declared `static`.  If it's a constant on a class, it should also be declared as `final`."
+        class="net.sourceforge.pmd.lang.rule.XPathRule">
+    <properties>
+      <property name="xpath">
+        <value>
+          <![CDATA[
+                   //FieldDeclaration[not(ancestor::ClassOrInterfaceDeclaration[starts-with(@Image, 'Example') or @Interface='true']) and @Final='false' and @Static='false']//VariableDeclaratorId[not(matches(@Image,"^[a-z][_a-zA-Z0-9]*$"))] |
+                   //FieldDeclaration[ancestor::ClassOrInterfaceDeclaration[@Interface='true']]//VariableDeclaratorId[not(matches(@Image,"^([a-z][a-zA-Z0-9]*|[A-Z][_A-Z0-9]*)$"))] |
+                   //FieldDeclaration[ancestor::ClassOrInterfaceDeclaration[@Interface='false' and not(starts-with(@Image, 'Example'))] and @Public='true' and @Static='true']//VariableDeclaratorId[not(parent::FormalParameter)][not(matches(@Image,"^[A-Z][_A-Z0-9]*$"))]
+          ]]>
+        </value>
+      </property>
+    </properties>
+  </rule>
+  <rule name="MethodName"
+        language="java"
+        message="Methods should be named in camelCase where the name starts with a lowercase letter, and the first letter of each subsequent word is capitalized."
+        class="net.sourceforge.pmd.lang.rule.XPathRule">
+    <properties>
+      <property name="xpath">
+        <value>
+          <![CDATA[
+                   //MethodDeclaration[not(parent::ClassOrInterfaceBodyDeclaration[
+                       child::Annotation[descendant::Name[@Image = "Test"]]
+                   ])]/MethodDeclarator[not(ancestor::ClassOrInterfaceDeclaration[starts-with(@Image, 'Example')])][not(matches(@Image,"^[a-z][a-zA-Z0-9]*$"))]
+          ]]>
+        </value>
+      </property>
+    </properties>
+  </rule>
+  <rule name="ParameterName"
+        language="java"
+        message="Parameters should be named in camelCase where the name starts with a lowercase letter, and the first letter of each subsequent word is capitalized."
+        class="net.sourceforge.pmd.lang.rule.XPathRule">
+    <properties>
+      <property name="xpath">
+        <value>
+          <![CDATA[
+                   //FormalParameter[not(../CatchStatement)]/VariableDeclaratorId[not(matches(@Image,"^[a-z][a-zA-Z0-9]*$"))]
+          ]]>
+        </value>
+      </property>
+    </properties>
+  </rule>
+
+  <rule name="TypeName"
+        language="java"
+        message="Classes and interfaces should be named in TitleCase where the name starts with a capital letter, and the first letter of each subsequent word is capitalized."
+        class="net.sourceforge.pmd.lang.rule.XPathRule">
+    <properties>
+      <property name="xpath">
+        <value>
+          <![CDATA[
+                   //ClassOrInterfaceDeclaration[not(matches(@Image,"^[A-Z][a-zA-Z0-9]*$"))]
+          ]]>
+        </value>
+      </property>
+    </properties>
+  </rule>
+
+  <rule name="ClassTypeParameterName"
+        language="java"
+        message="Generic parameter names that represent types should be in TitleCase where the name starts with a capital letter and the first letter of each subsequent word is also capitalized."
+        class="net.sourceforge.pmd.lang.rule.XPathRule">
+    <properties>
+      <property name="xpath">
+        <value>
+          <![CDATA[
+                   //ClassOrInterfaceDeclaration[@Interface='false']/TypeParameters/TypeParameter[not(matches(@Image,"^[A-Z][a-zA-Z0-9]*$"))]
+          ]]>
+        </value>
+      </property>
+    </properties>
+  </rule>
+  <rule name="InterfaceTypeParameterName"
+        language="java"
+        message="Generic parameter names that represent types should be in TitleCase where the name starts with a capital letter and the first letter of each subsequent word is also capitalized."
+        class="net.sourceforge.pmd.lang.rule.XPathRule">
+    <properties>
+      <property name="xpath">
+        <value>
+          <![CDATA[
+                   //ClassOrInterfaceDeclaration[@Interface='true']/TypeParameters/TypeParameter[not(matches(@Image,"^[A-Z][a-zA-Z0-9]*$"))]
+          ]]>
+        </value>
+      </property>
+    </properties>
+  </rule>
+  <rule name="MethodTypeParameterName"
+        language="java"
+        message="Generic parameter names that represent types should be in TitleCase where the name starts with a capital letter and the first letter of each subsequent word is also capitalized."
+        class="net.sourceforge.pmd.lang.rule.XPathRule">
+    <properties>
+      <property name="xpath">
+        <value>
+          <![CDATA[
+                   //MethodDeclaration/TypeParameters/TypeParameter[not(matches(@Image,"^[A-Z][a-zA-Z0-9]*$"))]
+          ]]>
+        </value>
+      </property>
+    </properties>
+  </rule>
+
+  <rule ref="category/java/design.xml/AvoidThrowingNullPointerException"
+        message="Avoid throwing NullPointerExceptions: if null is an illegal argument, throw an IllegalArgumentException, or use Objects.requireNonNull() instead."/>
+  <rule ref="category/java/design.xml/SimplifyBooleanReturns"
+    message="This if statement can be removed.  If you are returning true when the if statement&apos;s Boolean condition is true, and false when the statement&apos;s condition is false, then you can simply return the condition instead (i.e. return x &lt; 5;).  If you are returning false when the if statement&apos;s condition is true and returning true in the else branch, you can just return the NOT (!) of the condition instead (i.e. return !okay;)."/>
+
+  <rule ref="category/java/design.xml/SimplifyBooleanExpressions"
+        message="This boolean expression can be rewritten more simply. Hint: x == true is the same as x.  Also, x == false is the same as !x."/>
+  <rule name="SimplifyLogicalExpressions"
+        language="java"
+        message="This boolean expression can be written more simply. Hint: (true || x) and (x || true) are always true, while (x || false) and (false || x) are the same thing as x. Similarly, (true &amp;&amp; x) and (x &amp;&amp; true) are the same thing as x, while (x &amp;&amp; false) and (false &amp;&amp; x) are always false."
+        class="net.sourceforge.pmd.lang.rule.XPathRule">
+    <description>
+      Simplify Logical Expressions looks for redundant boolean operations.
+    </description>
+    <priority>3</priority>
+    <properties>
+      <property name="xpath">
+        <value>
+          <![CDATA[
+                  //ConditionalOrExpression/PrimaryExpression/PrimaryPrefix/Literal/BooleanLiteral |
+                  //ConditionalAndExpression/PrimaryExpression/PrimaryPrefix/Literal/BooleanLiteral
+          ]]>
+        </value>
+      </property>
+      <property name="ignoreExplicitConstructorInvocation" type="Boolean" description="Ignore explicit constructor invocation when deciding whether constructor is empty or not" value="false"/>
+    </properties>
+    <example>
+      <![CDATA[
+               public foo(boolean b) {
+                 if ((false && b) || true) { ... } // this is just true
+               }
+      ]]>
+    </example>
+  </rule> 
+  <rule ref="category/java/errorprone.xml/UnconditionalIfStatement"/>
+
+
+  <rule ref="category/java/bestpractices.xml/SwitchStmtsShouldHaveDefault"
+    message="This switch statement does not have a default case, which can lead to errors.  Add a default case (with an explicit comment, if no action is intended when no other case applies)."/>
+  <rule ref="category/java/bestpractices.xml/WhileLoopWithLiteralBoolean"
+    message="This loop is confusingly written.  Avoid having loops whose condition is always false."/>
+
+  <!-- AvoidDeeplyNestedIfStmts -->
+
+  <!--  Too many people like to do this when applying default or
+        corrective parameter value transformations
+  <rule ref="rulesets/java/design.xml/AvoidReassigningParameters"
+    message="It is a bad idea to assign a new value to a formal parameter
+    within a method, which can decrease readability. Consider using a local
+    variable instead."/>
+  -->
+
+  <!-- SwitchDensity -->
+
+  <!-- ConstructorCallsOverridableMethod -->
+
+  <!-- AccessorClassGeneration -->
+
+  <!-- FinalFieldCouldBeStatic -->
+
+  <!-- CloseResource -->
+
+  <!-- NonStaticInitializer -->
+
+  <!-- DefaultLabelNotLastInSwitchStmt -->
+
+  <rule ref="category/java/errorprone.xml/NonCaseLabelInSwitchStatement"
+    message="This label is not a case label.  Such labels decrease readability and cause confusion in a case statement.  Remove it, or refactor your code."/>
+
+  <!-- OptimizeToArrayCall -->
+
+  <!-- BadComparison -->
+
+  <rule ref="category/java/errorprone.xml/EqualsNull"
+    message="When comparing an object reference to the value null you want to use ==, not the .equals() method."/>
+
+  <!-- ConfusingTernary -->
+
+  <rule ref="category/java/errorprone.xml/InstantiationToGetClass"
+    message="Avoid instantiating an object just to call getClass() on it. Use the .class public member instead (i.e., use &quot;SomeClassName.class&quot; instead of &quot;new SomeClassName().getClass()&quot;)."/>
+
+  <rule ref="category/java/errorprone.xml/IdempotentOperations"
+    message="This operation has no effect.  Examine it to make sure it is not a bug, then remove it."/>
+
+  <!-- SimpleDateFormatNeedsLocale -->
+
+  <!--  ImmutableField -->
+
+  <!--  UseLocaleWithCaseConversions -->
+
+  <!-- AvoidProtectedFieldInFinalClass -->
+
+  <!--  AssignmentToNonFinalStatic -->
+
+  <!-- <rule
+    ref="rulesets/java/design.xml/MissingStaticMethodInNonInstantiatableClass"
+    message="This class cannot be instantiated, since it has only private constructor(s). But this class has no static methods or fields.  A class that has private constructors and does not have any static methods or fields cannot be used."/> -->
+  <rule name="MissingStaticMethodInNonInstantiatableClass"
+        language="java"
+        message="This class cannot be instantiated, since it has only private constructor(s). But this class has no static methods, fields, or inner classes.  A class that has private constructors and does not have any static methods, fields or inner classes cannot be used."
+        class="net.sourceforge.pmd.lang.rule.XPathRule">
+    <properties>
+      <property name="xpath">
+        <value>
+          <![CDATA[
+            //ClassOrInterfaceDeclaration[@Nested='false'][
+            ( count(./ClassOrInterfaceBody/ClassOrInterfaceBodyDeclaration/ConstructorDeclaration)>0
+            and count(./ClassOrInterfaceBody/ClassOrInterfaceBodyDeclaration/ConstructorDeclaration) = count(./ClassOrInterfaceBody/ClassOrInterfaceBodyDeclaration/ConstructorDeclaration[@Private='true']) )
+            and
+            count(.//MethodDeclaration[@Static='true'])=0
+            and
+            count(.//FieldDeclaration[@Private='false'][@Static='true'])=0
+            and
+            count(.//ClassOrInterfaceDeclaration[@Private='false'][@Static='true'])=0
+            ]
+          ]]>
+        </value>
+      </property>
+    </properties>
+  </rule>
+
+  <!-- AvoidSynchronizedAtMethodLevel -->
+
+  <!-- MissingBreakInSwitch -->
+
+  <!-- UseNotifyAllInsteadOfNotify -->
+
+  <!-- AvoidInstanceofChecksInCatchClause -->
+
+  <!-- AbstractClassWithoutAbstractMethod -->
+
+  <rule ref="category/java/design.xml/SimplifyConditional"
+    message="It is unnecessary to check for null before instanceof.  The instanceof keyword returns false when given a null argument."/>
+
+  <!-- rule ref="rulesets/java/design.xml/CompareObjectsWithEquals"
+    message="When comparing two objects you probably want to use the
+    .equals method, not the equality operator (==)."/ -->
+
+  <!-- PositionLiteralsFirstInComparisons -->
+
+  <!-- UnnecessaryLocalBeforeReturn -->
+
+  <!-- NonThreadSafeSingleton -->
+
+  <rule ref="category/java/documentation.xml/UncommentedEmptyMethodBody"
+    message="This method does not contain any code. Should it be doing something? Or can it be removed?  If you need to keep it, add a comment to the body explaining why it is empty."/>
+
+  <!-- <rule ref="rulesets/java/design.xml/UncommentedEmptyConstructor"
+    message="This constructor does not contain any code. Should it be
+    doing something?  Add a comment to the body explaining why it is
+    empty."/> -->
+
+  <rule name="UncommentedEmptyConstructor"
+        language="java"
+        since="3.4"
+        message="This constructor does not contain any code. Should it be doing something?  Add a comment to the body explaining why it is empty."
+        class="net.sourceforge.pmd.lang.rule.XPathRule"
+        externalInfoUrl="${pmd.website.baseurl}/rules/java/design.html#UncommentedEmptyConstructor">
+    <description>
+      Uncommented Empty Constructor finds instances where a constructor does not
+      contain statements, but there is no comment. By explicitly commenting empty
+      constructors it is easier to distinguish between intentional (commented)
+      and unintentional empty constructors.
+    </description>
+    <priority>3</priority>
+    <properties>
+      <property name="xpath">
+        <value>
+          <![CDATA[
+                   //ClassOrInterfaceDeclaration[not(starts-with(@Image, 'Example'))]//ConstructorDeclaration[@Private='false'][count(BlockStatement) = 0 and ($ignoreExplicitConstructorInvocation = 'true' or not(ExplicitConstructorInvocation)) and @containsComment = 'false']
+          ]]>
+        </value>
+      </property>
+      <property name="ignoreExplicitConstructorInvocation" type="Boolean" description="Ignore explicit constructor invocation when deciding whether constructor is empty or not" value="false"/>
+    </properties>
+    <example>
+      <![CDATA[
+               public Foo() {
+               // This constructor is intentionally empty. Nothing special is needed here.
+               }
+      ]]>
+    </example>
+  </rule> 
+
+  <!-- AvoidConstantsInterface -->
+
+  <!-- UnsynchronizedStaticDateFormatter -->
+
+  <!-- PreserveStackTrace -->
+
+  <!-- UseCollectionIsEmpty -->
+
+  <!-- ClassWithOnlyPrivateConstructorsShouldBeFinal -->
+
+  <!-- EmptyMethodInAbstractClassShouldBeAbstract -->
+
+  <!-- Sometimes this isn't really an error, but far too often for students
+       it really is, so a diagnostic is more valuable that the (rare)
+       false positives. -->
+  <rule ref="category/java/design.xml/SingularField"
+    message="This field is only used in one method (or constructor) in this class. Make it a local variable within the method instead."/>
+
+  <!-- ReturnEmptyArrayRatherThanNull -->
+
+  <!-- AbstractClassWithoutAnyMethod -->
+
+  <rule ref="category/java/performance.xml/TooFewBranchesForASwitchStatement"
+    message="This switch statement has too few branches--rewrite it as an if statement instead.  Switch statements are intended for more complex multi-way branching behavior. Using a switch for only a few cases is not advised, since switches are not as easy to understand as if-then statements."/>
+
+  <rule ref="category/java/design.xml/LogicInversion"
+    message="Instead of using unary not (!) around the whole expression, use the opposite comparison operation instead (e.g., use != instead of ==, or &gt;= instead of &lt;, etc.)"/>
+
+  <!-- UseVarargs -->
+
+  <!-- FieldDeclarationsShouldBeAtStartOfClass -->
+
+  <!-- GodClass -->
+
+
+  <!--<rule ref="plugin-rulesets/empty.xml"/> -->
+
+  <rule ref="category/java/errorprone.xml/EmptyCatchBlock"
+    message="The body of this catch block is empty, so the caught exception will be thrown away with no action.  If this is what you intend, please provide an appropriate comment inside the braces.">
+    <properties>
+        <property name="allowCommentedBlocks" value="true"/>
+    </properties>
+  </rule>
+  <rule name="PointlessIfElse"
+        language="java"
+        message="This if-else statement contains empty blocks. Revise the test if needed and remove the unnecessary blocks, or else add a comment clarifying why the empty blocks are needed."
+        class="net.sourceforge.pmd.lang.rule.XPathRule">
+    <properties>
+      <property name="xpath">
+        <value>
+          <![CDATA[
+                   //IfStatement[count(./Statement)=2]/Statement[./EmptyStatement or ./Block[count(*) = 0 and @containsComment='false']]
+          ]]>
+        </value>
+      </property>
+    </properties>
+  </rule>
+  <rule name="EmptyDoStmt"
+        language="java"
+        message="The body of this do loop is empty. Make sure you do not have a semicolon (;) after the do by mistake.  If you do not need to do anything in the body of the loop you can probably omit the loop entirely."
+        class="net.sourceforge.pmd.lang.rule.XPathRule">
+    <properties>
+      <property name="xpath">
+        <value>
+          <![CDATA[
+                   //DoStatement/Statement[EmptyStatement or Block[count(*) = 0 and @containsComment='false']]
+          ]]>
+        </value>
+      </property>
+    </properties>
+  </rule>
+  <rule name="EmptyForStmt"
+        language="java"
+        message="The body of this for loop is empty. Make sure you do
+                 not have a semicolon (;) after the loop header by mistake.  If you do not need to do anything in the body of the loop you can probably omit the loop entirely."
+        class="net.sourceforge.pmd.lang.rule.XPathRule">
+    <properties>
+      <property name="xpath">
+        <value>
+          <![CDATA[
+                   //ForStatement/Statement[EmptyStatement or Block[count(*) = 0 and @containsComment='false']]
+          ]]>
+        </value>
+      </property>
+    </properties>
+  </rule>
+
+  <rule name="EmptyIfStmt"
+        language="java"
+        message="The body of this if statement is empty. Make sure you do not have a semicolon (;) after the if by mistake.  If you do not need to do anything in this if you can probably omit it entirely."
+        class="net.sourceforge.pmd.lang.rule.XPathRule">
+    <properties>
+      <property name="xpath">
+        <value>
+          <![CDATA[
+             //IfStatement[count(./Statement)=1]/Statement[EmptyStatement or Block[count(*) = 0 and @containsComment='false']]
+          ]]>
+        </value>
+      </property>
+    </properties>
+  </rule>
+
+  <rule name="EmptyWhileStmt"
+        language="java"
+        message="The body of this while loop is empty. Make sure you do not have a semicolon (;) after the while by mistake.  If you do not need to do anything in the body of the loop you can probably omit the loop entirely."
+        class="net.sourceforge.pmd.lang.rule.XPathRule">
+    <properties>
+      <property name="xpath">
+        <value>
+          <![CDATA[
+           //WhileLoopStatement[./BlockStatement[count(*) = 0] and @containsComment = 'false']
+          ]]>
+        </value>
+      </property>
+    </properties>
+  </rule>
+
+  <rule name="EmptyTryBlock"
+        language="java"
+        message="The body of this try block is empty, so the entire try/catch does nothing.  Add statements to the block or remove it entirely."
+        class="net.sourceforge.pmd.lang.rule.XPathRule">
+    <properties>
+      <property name="xpath">
+        <value>
+          <![CDATA[
+           //TryStatement[./BlockStatement[count(*) = 0] and @containsComment = 'false']
+          ]]>
+        </value>
+      </property>
+    </properties>
+  </rule>
+
+  <rule ref="category/java/errorprone.xml/EmptyCatchBlock"
+        message="The body of this catch block is empty.  Add statements to the block or remove it if possible.">
+    <properties>
+      <property name="allowCommentedBlocks" value="true" />
+      <property name="allowExceptionNameRegex" value="^(ignored|expected)$" />
+    </properties>
+  </rule>
+
+  <rule name="EmptyFinallyBlock"
+        language="java"
+        message="The body of this try block is empty, so the entire try/catch does nothing.  Add statements to the block or remove it entirely."
+        class="net.sourceforge.pmd.lang.rule.XPathRule">
+    <properties>
+      <property name="xpath">
+        <value>
+          <![CDATA[
+           //FinallyStatement[./BlockStatement[count(*) = 0] and @containsComment = 'false']
+          ]]>
+        </value>
+      </property>
+    </properties>
+  </rule>
+
+  <rule ref="category/java/errorprone.xml/EmptySwitchStatements"
+    message="This switch statement is empty.  Add cases with statements or remove the switch entirely."/>
+
+  <rule ref="category/java/errorprone.xml/EmptySynchronizedBlock"
+    message="This synchronized block is empty.  Add statements to the block or remove it entirely."/>
+
+  <rule ref="category/java/errorprone.xml/EmptyStatementNotInLoop"
+    message="A semicolon (;) on its own line or extra semicolons at the end of a line represent empty statements. Empty statements are unnecessary and should be removed."/>
+
+  <!-- <rule ref="rulesets/java/empty.xml/EmptyInitializer"
+    message="This initializer block is empty.  Add statements
+    to the block or remove it entirely."/> -->
+
+  <rule name="EmptyStatementBlock"
+        language="java"
+        message="This block is empty.  Add statements to the block or remove it entirely."
+        class="net.sourceforge.pmd.lang.rule.XPathRule">
+    <properties>
+      <property name="xpath">
+        <value>
+          <![CDATA[
+           //BlockStatement/Statement/Block[count(*) = 0 and @containsComment = 'false']
+          ]]>
+        </value>
+      </property>
+    </properties>
+  </rule>
+
+
+  <rule ref="category/java/bestpractices.xml/DefaultLabelNotLastInSwitchStmt"
+        message="To improve readability, the default case should always be the last case in a switch statement"/>
+
+  <!-- <rule ref="rulesets/java/errorprone.xml/EmptyInitializer"
+    message="This initializer block is empty.  Add statements
+    to the block or remove it entirely."/> -->
+
+
+
+  <!-- favorites.xml -->
+  <!-- finalizers.xml" -->
+  <!-- <rule ref="plugin-rulesets/imports.xml"/> -->
+  <rule ref="category/java/codestyle.xml/DuplicateImports"
+        message="This import statement duplicates the import performed by an earlier statement. It is best to avoid importing the same library class more than once."/>
+  <rule ref="category/java/codestyle.xml/DontImportJavaLang"
+        message="The entire java.lang package is automatically imported into every program. It is unnecessary to import it explicitly. You should remove this import statement."/>
+  <rule ref="category/java/bestpractices.xml/UnusedImports"
+        message="The package or class imported by this statement is never used. If you are not going to use the package or class you should remove the import statement."/>
+  <!-- j2ee.xml -->
+  <!-- javabeans.xml -->
+  <!-- jsprulesets.properties -->
+  <!-- <rule ref="plugin-rulesets/junit.xml"/> -->
+  <!-- <rule ref="rulesets/java/junit.xml/JUnitStaticSuite"/> -->
+  <!-- <rule ref="rulesets/java/junit.xml/JUnitSpelling"/> -->
+  <!-- <rule ref="rulesets/java/junit.xml/UseAssertEqualsInsteadOfAssertTrue"/> -->
+  <!-- <rule ref="rulesets/java/junit.xml/UseAssertSameInsteadOfAssertTrue"/> -->
+  <!-- <rule ref="rulesets/java/junit.xml/UseAssertNullInsteadOfAssertTrue"/> -->
+  <!-- <rule ref="rulesets/java/junit.xml/SimplifyBooleanAssertion"/> -->
+  
+  <!-- logging-jakarta-commons.xml -->
+  <!-- logging-java.xml -->
+  <!-- migrating.xml -->
+  <!-- migrating_to_13.xml -->
+  <!-- migrating_to_14.xml -->
+  <!-- migrating_to_15.xml -->
+  <!-- <rule ref="plugin-rulesets/naming.xml"/> -->
+  <rule ref="category/java/codestyle.xml/ShortMethodName"
+        message="The name of this method is probably not very descriptive. Using descriptive method names (at least three characters) makes it easier for a reader to understand what the method is supposed to do."/>
+  <!--
+      AbstractNaming
+  -->
+  <rule ref="category/java/errorprone.xml/SuspiciousHashcodeMethodName"
+        message="The method name and return type are suspiciously close to hashCode(): if you meant to override hashCode, check your spelling and capitalization." />
+  <!--
+      SuspiciousConstantFieldName
+  -->
+  <rule ref="category/java/errorprone.xml/SuspiciousEqualsMethodName"
+        message="The method name and number of parameters are suspiciously close to equals(Object): if you meant to override the equals method, check your spelling and the types of the arguments." />
+  <rule ref="category/java/errorprone.xml/MethodWithSameNameAsEnclosingClass"
+        message="This method has the same name as the class that contains it. Did you intend this method to be a constructor? If so, remember constructors do not have a return type. If not, you should pick a new name for this method."/>
+  <!-- <rule ref="rulesets/java/naming.xml/AvoidFieldNameMatchingTypeName" -->
+  <!--       message="This field has the same name as the class that contains it. This is not illegal but it can be very confusing and is best avoided. You should pick a new name for this field."/> -->
+  <!-- optimizations.xml -->
+  <!-- rulesets.properties -->
+  <!-- scratchpad.xml -->
+  <rule ref="category/java/performance.xml/StringToString" />
+  <rule ref="category/java/errorprone.xml/UseEqualsToCompareStrings" />
+  <rule ref="category/java/errorprone.xml/UnnecessaryCaseChange" />
+  <!-- sunsecure.xml -->
+  <!-- basic-jsp.xml -->
+  <!-- basic-jsf.xml -->
+  <rule name="JUnit3TestsHaveAssertions"
+        language="java"
+        message="A test case method should use one or more &quot;assert...()&quot; methods to check that the desired behavior is actually occurring."
+        class="net.sourceforge.pmd.lang.rule.XPathRule"
+        externalInfoURL="http://web-cat.cs.vt.edu/WCWiki/PmdRules/VtRules#JUnit3TestsHaveAssertions">
+    <description>
+      All JUnit test methods should contain at least one assertion.
+    </description>
+    <properties>
+      <property name="xpath">
+        <value>
+          <![CDATA[
+                  //MethodDeclaration
+                      [starts-with(MethodDeclarator/@Image, 'test')]
+                      [not(descendant::StatementExpression/PrimaryExpression/PrimaryPrefix/Name
+                        [starts-with(@Image, 'assert')
+                          or contains(@Image,'.assert')
+                          or @Image = 'fail' or contains(@Image,'.fail')] )]
+                      [ancestor::ClassOrInterfaceDeclaration[
+                          count( ExtendsList[
+                              ClassOrInterfaceType/@Image='TestCase'
+                                  or ClassOrInterfaceType/@Image='GUITestCase'
+                                  or ClassOrInterfaceType/@Image='junit.framework.TestCase'
+                                  or ClassOrInterfaceType/@Image='student.TestCase'
+                                  or ClassOrInterfaceType/@Image='student.GUITestCase']
+                               ) = 1
+                      ]]
+          ]]>
+        </value>
+      </property>
+    </properties>
+    <priority>2</priority>
+    <example>
+      <![CDATA[
+               import junit.framework.*;
+               public class Foo extends TestCase {
+                 public void test1() {} // oops, no assertion!
+               }
+      ]]>
+    </example>
+  </rule>
+  <rule ref="category/java/bestpractices.xml/JUnitTestsShouldIncludeAssert"
+        message="A test case method should use one or more &quot;assert...()&quot; methods to check that the desired behavior is actually occurring."
+        />
+  <rule name="JUnit3ConstantAssertion"
+        language="java"
+        message="This assertion uses only values known at compile time, so it cannot test any useful behavior exhibited by your code at run-time."
+        class="net.sourceforge.pmd.lang.rule.XPathRule"
+        externalInfoURL="http://web-cat.cs.vt.edu/WCWiki/PmdRules/VtRules#JUnitConstantAssertion">
+    <description>
+      All assertEquals() or assertTrue() assertions in JUnit test methods
+      should contain one or more non-literal parameters.
+    </description>
+    <properties>
+      <property name="xpath">
+        <value>
+          <![CDATA[
+               //StatementExpression/PrimaryExpression[
+                 PrimaryPrefix/Name/@Image='assertTrue' or
+                 PrimaryPrefix/Name/@Image='assertFalse' or
+                 PrimaryPrefix/Name/@Image='assertNotNull' or
+                 PrimaryPrefix/Name/@Image='assertNull' or
+                 PrimaryPrefix/Name/@Image='assertNotSame' or
+                 PrimaryPrefix/Name/@Image='assertSame' or
+                 PrimaryPrefix/Name/@Image='assertEquals']
+                 [not(PrimarySuffix/Arguments/ArgumentList/descendant::PrimaryPrefix/Name or
+                 PrimarySuffix/Arguments/ArgumentList/descendant::PrimaryExpression/PrimaryPrefix[not(Literal)][@ThisModifier="true"] or
+                 PrimarySuffix/Arguments/ArgumentList/descendant::PrimaryExpression[count(PrimarySuffix)>1] or
+                 PrimarySuffix/Arguments/ArgumentList/descendant::PrimaryExpression/PrimaryPrefix//Arguments)]
+                 [ancestor::ClassOrInterfaceDeclaration[
+                   count( ExtendsList[
+                       ClassOrInterfaceType/@Image='TestCase'
+                       or ClassOrInterfaceType/@Image='GUITestCase'
+                       or ClassOrInterfaceType/@Image='junit.framework.TestCase'
+                       or ClassOrInterfaceType/@Image='student.TestCase'
+                       or ClassOrInterfaceType/@Image='student.GUITestCase']
+                   ) = 1
+                   ]]
+              ]]>
+        </value>
+      </property>
+    </properties>
+    <priority>2</priority>
+    <example>
+      <![CDATA[
+               import junit.framework.*;
+               public class Foo extends TestCase {
+                 public void test1() {
+                   assertTrue( true );    // oops, does not test anything useful!
+                   assertEquals( 0, 0 );  // oops, does not test anything useful!
+                 }
+               }
+      ]]>
+    </example>
+  </rule>
+  <rule name="JUnit4ConstantAssertion"
+        language="java"
+        message="This assertion uses only values known at compile time, so it cannot test any useful behavior exhibited by your code at run-time."
+        class="net.sourceforge.pmd.lang.rule.XPathRule"
+        externalInfoURL="http://web-cat.cs.vt.edu/WCWiki/PmdRules/VtRules#JUnitConstantAssertion">
+    <description>
+      All assertEquals() or assertTrue() assertions in JUnit 4.x test methods
+      should contain one or more non-literal parameters.
+    </description>
+    <properties>
+      <property name="xpath">
+        <value>
+          <![CDATA[
+              //StatementExpression/PrimaryExpression[
+                PrimaryPrefix/Name/@Image='assertTrue' or
+                PrimaryPrefix/Name/@Image='assertFalse' or
+                PrimaryPrefix/Name/@Image='assertNotNull' or
+                PrimaryPrefix/Name/@Image='assertNull' or
+                PrimaryPrefix/Name/@Image='assertNotSame' or
+                PrimaryPrefix/Name/@Image='assertSame' or
+                PrimaryPrefix/Name/@Image='assertEquals']
+                [not(PrimarySuffix/Arguments/ArgumentList/descendant::PrimaryPrefix/Name or
+                PrimarySuffix/Arguments/ArgumentList/descendant::PrimaryExpression/PrimaryPrefix[not(Literal)][@ThisModifier="true"] or
+                PrimarySuffix/Arguments/ArgumentList/descendant::PrimaryExpression[count(PrimarySuffix)>1] or
+                PrimarySuffix/Arguments/ArgumentList/descendant::PrimaryExpression//Arguments)]
+                [ancestor::MethodDeclaration
+                  [parent::ClassOrInterfaceBodyDeclaration[
+                    child::Annotation[descendant::Name/@Image = "Test"]
+                  ]]]
+          ]]>
+        </value>
+      </property>
+    </properties>
+    <priority>2</priority>
+    <example>
+      <![CDATA[
+           import org.junit.*;
+           public class Foo {
+             @Test
+             public void test1() {
+               assertTrue( true );    // oops, does not test anything useful!
+               assertEquals( 0, 0 );  // oops, does not test anything useful!
+             }
+           }
+      ]]>
+    </example>
+  </rule>
+  <rule name="JUnitTestClassNeedsTestCase"
+        language="java"
+        message="This JUnit test class does not contain any actual tests."
+        class="net.sourceforge.pmd.lang.rule.XPathRule"
+        externalInfoURL="http://web-cat.cs.vt.edu/WCWiki/PmdRules/VtRules#JUnitTestClassNeedsTestCase">
+    <description>
+      All JUnit test classes should contain a test method.
+    </description>
+    <properties>
+      <property name="xpath">
+        <value>
+          <![CDATA[
+              //ClassOrInterfaceDeclaration[
+                  count( ExtendsList[
+                      ClassOrInterfaceType/@Image='TestCase'
+                      or ClassOrInterfaceType/@Image='GUITestCase'
+                      or ClassOrInterfaceType/@Image='junit.framework.TestCase'
+                      or ClassOrInterfaceType/@Image='student.TestCase'
+                      or ClassOrInterfaceType/@Image='student.GUITestCase']
+                  ) = 1
+                  ][
+                not(descendant::MethodDeclaration[
+                  starts-with(MethodDeclarator/@Image, 'test')])]
+          ]]>
+        </value>
+      </property>
+    </properties>
+    <priority>2</priority>
+    <example>
+      <![CDATA[
+               import junit.framework.*;
+               public class Foo extends TestCase {
+                 // oops, no test cases!
+               }
+      ]]>
+    </example>
+  </rule>
+  <rule name="FormalParametersNeedMeaningfulNames"
+        language="java"
+        message="A formal parameter has been left with its auto-generated default name instead of a more meaningful name."
+        class="net.sourceforge.pmd.lang.rule.XPathRule"
+        externalInfoURL="http://web-cat.cs.vt.edu/WCWiki/PmdRules/VtRules#FormalParametersNeedMeaningfulNames">
+    <description>
+      When using a development environment that can auto-generate empty
+      method definitions, you should change the auto-generated formal
+      parameter names to something more meaningful.
+    </description>
+    <properties>
+      <property name="xpath">
+        <value>
+          <![CDATA[
+                   //MethodDeclaration/MethodDeclarator/FormalParameters/FormalParameter
+                       /VariableDeclaratorId[matches(@Image, '^arg[0-9]+$')]
+          ]]>
+        </value>
+      </property>
+    </properties>
+    <priority>2</priority>
+    <example>
+      <![CDATA[
+               public class FooClass {
+                 public void foo(int arg0, String arg1) { }
+               }
+      ]]>
+    </example>
+  </rule>
+</ruleset>

@@ -1,0 +1,65 @@
+C:\Users\Pengb\.jdks\corretto-11.0.12\bin\java.exe "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.2.1\lib\idea_rt.jar=55222:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.2.1\bin" -Dfile.encoding=UTF-8 -classpath "D:\IDEA Java\CS5010\Project\Project4\out\production\Project4" driver.DungeonDriver
+The initial position: (2,5)
+End position: (1,0)
+
+You are in a cave
+Now you position: (2,5)
+Now you have: Arrow:3 
+Doors lead to the: E N S 
+Move, Pickup, or Shoot (M-P-S)? M
+Where to? N
+
+You are in a cave
+Now you position: (1,5)
+Now you have: Arrow:3 
+Doors lead to the: W E N S 
+Move, Pickup, or Shoot (M-P-S)? M
+Where to? N
+
+You are in a cave
+Now you position: (0,5)
+Now you have: Arrow:3 
+Doors lead to the: W E N S 
+You find: 
+Arrow: 1
+Move, Pickup, or Shoot (M-P-S)? P
+What? Arrow
+You pick up a(n) Arrow
+
+You are in a cave
+Now you position: (0,5)
+Now you have: Arrow:4 
+Doors lead to the: W E N S 
+Move, Pickup, or Shoot (M-P-S)? M
+Where to? W
+
+You are in a cave
+Now you position: (0,4)
+Now you have: Arrow:4 
+Doors lead to the: W E N 
+Move, Pickup, or Shoot (M-P-S)? M
+Where to? W
+
+You are in a cave
+Now you position: (0,3)
+Now you have: Arrow:4 
+Doors lead to the: W E N S 
+Move, Pickup, or Shoot (M-P-S)? M
+Where to? W
+
+You are in a cave
+Now you position: (0,2)
+Now you have: Arrow:4 
+Doors lead to the: W E N S 
+You find: 
+Sapphire: 1
+Move, Pickup, or Shoot (M-P-S)? P
+What? Sapphire
+You pick up a(n) Sapphire
+
+You are in a cave
+Now you position: (0,2)
+Now you have: Arrow:4 Sapphire:1 
+Doors lead to the: W E N S 
+Move, Pickup, or Shoot (M-P-S)? M
+Where to? W

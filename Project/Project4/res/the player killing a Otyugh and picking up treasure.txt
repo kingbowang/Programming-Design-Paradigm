@@ -1,0 +1,66 @@
+C:\Users\Pengb\.jdks\corretto-11.0.12\bin\java.exe "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.2.1\lib\idea_rt.jar=55155:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.2.1\bin" -Dfile.encoding=UTF-8 -classpath "D:\IDEA Java\CS5010\Project\Project4\out\production\Project4" driver.DungeonDriver
+The initial position: (3,5)
+End position: (0,0)
+
+You are in a cave
+Now you position: (3,5)
+Now you have: Arrow:3 
+Doors lead to the: E S N 
+You find: 
+Ruby: 1
+You smell something slight nearby
+Move, Pickup, or Shoot (M-P-S)? P
+What? Ruby
+You pick up a(n) Ruby
+
+You are in a cave
+Now you position: (3,5)
+Now you have: Arrow:3 Ruby:1 
+Doors lead to the: E S N 
+You smell something slight nearby
+Move, Pickup, or Shoot (M-P-S)? M
+Where to? S
+
+You are in a cave
+Now you position: (0,5)
+Now you have: Arrow:3 Ruby:1 
+Doors lead to the: W E S N 
+You smell something terrible nearby
+Move, Pickup, or Shoot (M-P-S)? S
+No. of caves (1-5)? 1
+Where to(N S E W)? S
+You hear a great howl in the distance
+
+You are in a cave
+Now you position: (0,5)
+Now you have: Arrow:2 Ruby:1 
+Doors lead to the: W E S N 
+Move, Pickup, or Shoot (M-P-S)? S
+No. of caves (1-5)? 1
+Where to(N S E W)? S
+You hear a great howl in the distance
+
+You are in a cave
+Now you position: (0,5)
+Now you have: Arrow:1 Ruby:1 
+Doors lead to the: W E S N 
+Move, Pickup, or Shoot (M-P-S)? M
+Where to? S
+
+You are in a cave
+Now you position: (1,5)
+Now you have: Arrow:1 Ruby:1 
+Doors lead to the: W E S N 
+Move, Pickup, or Shoot (M-P-S)? M
+Where to? E
+
+You are in a cave
+Now you position: (1,0)
+Now you have: Arrow:1 Ruby:1 
+Doors lead to the: W N 
+Move, Pickup, or Shoot (M-P-S)? M
+Where to? N
+
+Great! You made it through the map!
+
+Process finished with exit code 0

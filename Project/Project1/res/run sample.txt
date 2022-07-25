@@ -1,0 +1,51 @@
+"C:\Program Files\Java\jdk-16.0.2\bin\java.exe" "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.2.1\lib\idea_rt.jar=53185:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.2.1\bin" -Dfile.encoding=UTF-8 -classpath "D:\IDEA Java\CS5010\Project\Project1\out\production\Project1" project.Driver
+----------------
+Species: drill
+housed in Isolation and Enclosure
+----------------
+----------------
+Species: guereza
+housed in Enclosure
+----------------
+----------------
+Species: howler
+housed in Enclosure
+----------------
+#########################
+test species exist: guereza
+guereza exist true
+#########################
+Enclosure: 
+name: Kevin  sex: male  favorite food:EGGS
+----------------
+Enclosure: 
+name: Corinna  sex: female  favorite food:FRUITS
+----------------
+Enclosure: 
+name: Peter  sex: male  favorite food:TREE_SAP
+----------------
+#########################
+----------------
+Species: Undefine
+housed in Isolation
+----------------
+----------------
+Species: drill
+housed in Enclosure
+----------------
+----------------
+Species: guereza
+housed in Enclosure
+----------------
+----------------
+Species: howler
+housed in Enclosure
+----------------
+#########################
+Food: FRUITS    Need food size: 250
+Food: TREE_SAP    Need food size: 100
+Food: EGGS    Need food size: 500
+
+Process finished with exit code 0
+
+

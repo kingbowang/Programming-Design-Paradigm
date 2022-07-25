@@ -1,0 +1,118 @@
+C:\Users\Pengb\.jdks\corretto-11.0.12\bin\java.exe "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.2.1\lib\idea_rt.jar=63390:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.2.1\bin" -Dfile.encoding=UTF-8 -classpath "D:\IDEA Java\CS5010\Project\Project2\out\production\Project2" battle.Driver
+Battle Game
+
+player1: abdul 
+abdul is currently wearing:
+
+HeadGear: mask of rock
+
+Potion:
+no#1: potion of holy
+no#2: potion of strength
+no#3: potion of doom
+no#4: potion of ruin
+no#5: water of escape
+no#6: water of king
+no#7: water of strength
+no#8: water of devil
+no#9: water of justice
+
+Belt:
+no#1: belt of king
+no#2: belt of flight
+no#3: belt of escape
+no#4: belt of strength
+no#5: belt of magic
+
+FootGear: shoes of doom
+
+Weapon: Flail of Sleep
+
+With total health: 126
+With a base attack of: 15
+With a base defense of: 10
+With a base charisma of: 14
+With a modified attack of: 43
+With a modified defense of: 20
+With a modified charisma of: 31 
+
+player2: vic 
+vic is currently wearing:
+
+HeadGear: hat of devil
+
+Potion:
+no#1: potion of explosion
+no#2: potion of flame
+no#3: potion of telepathy
+no#4: potion of punishment
+no#5: water of flame
+no#6: water of telepathy
+no#7: water of power
+no#8: water of healing
+
+Belt:
+no#1: belt of speed
+no#2: belt of doom
+no#3: belt of fake
+no#4: belt of devil
+no#5: belt of flame
+no#6: belt of sight
+no#7: belt of kill
+no#8: belt of water
+
+FootGear: slides of water
+
+Weapon: Broadsword of Water
+
+With total health: 126
+With a base attack of: 18
+With a base defense of: 10
+With a base charisma of: 13
+With a modified attack of: 36
+With a modified defense of: 27
+With a modified charisma of: 29 
+
+abdul is ready to attack vic.
+abdul has attacked 19 damage.
+
+vic is ready to attack abdul.
+vic has attacked 12 damage.
+
+abdul is ready to attack vic.
+abdul has attacked 20 damage.
+
+vic is ready to attack abdul.
+vic has attacked 13 damage.
+
+abdul is ready to attack vic.
+abdul has attacked 17 damage.
+
+vic is ready to attack abdul.
+vic has attacked 11 damage.
+
+abdul is ready to attack vic.
+abdul has attacked 17 damage.
+
+vic is ready to attack abdul.
+vic has attacked 14 damage.
+
+abdul is ready to attack vic.
+abdul has attacked 19 damage.
+
+vic is ready to attack abdul.
+vic has attacked 11 damage.
+
+abdul is ready to attack vic.
+abdul has attacked 21 damage.
+
+vic is ready to attack abdul.
+vic has attacked 14 damage.
+
+abdul is ready to attack vic.
+abdul has attacked 18 damage.
+abdul has won the fight.
+Nice Battle, Players now send to relax, do you want to play again?(yes/no):
+no
+
+Process finished with exit code 0
